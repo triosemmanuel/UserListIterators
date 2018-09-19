@@ -3,9 +3,16 @@
 
 #include "stdafx.h"
 
+#include <iostream>
+
 
 int main()
 {
+
+	std::cout << "hey." << std::endl;
+
+
+	system("PAUSE");
     return 0;
 }
 
