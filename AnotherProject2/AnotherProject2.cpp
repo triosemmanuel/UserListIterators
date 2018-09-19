@@ -61,10 +61,11 @@ int main()
 
 	}*/
 
+	// Print out every user / password
 	list<User>::iterator it;
 	for (it = user_list.begin(); it != user_list.end(); it++)
 	{
-		cout << (*it).getUsername() << endl;
+		cout << (*it).getUsername() << "\t\t" << (*it).getPassword() << endl;
 	}
 
 
