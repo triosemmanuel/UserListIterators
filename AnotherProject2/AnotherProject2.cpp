@@ -40,6 +40,19 @@ public:
 	}
 };
 
+bool search(list<User> user_list, string username)
+{
+	list<User>::iterator it;
+	for (it = user_list.begin(); it != user_list.end(); it++)
+	{
+		if ((*it).getUsername() == username) {
+			// Found!!
+			return true;
+		}
+	}
+
+	return false;
+}
 
 int main()
 {
@@ -68,6 +81,18 @@ int main()
 		cout << (*it).getUsername() << "\t\t" << (*it).getPassword() << endl;
 	}
 
+
+	string chosen_username;
+	cout << "Enter a username to search for: ";
+	cin >> chosen_username;
+
+	bool found;
+	found = search(user_list, chosen_username);
+
+	if (found == true)
+		cout << "Found";
+	else
+		cout << "Not found";
 
 	system("PAUSE");
     return 0;
