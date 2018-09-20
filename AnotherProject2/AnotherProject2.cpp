@@ -40,18 +40,18 @@ public:
 	}
 };
 
-bool search(list<User> user_list, string username)
+User* search(list<User> user_list, string username)
 {
 	list<User>::iterator it;
 	for (it = user_list.begin(); it != user_list.end(); it++)
 	{
 		if ((*it).getUsername() == username) {
 			// Found!!
-			return true;
+			return &(*it);
 		}
 	}
 
-	return false;
+	return NULL;
 }
 
 int main()
@@ -89,7 +89,7 @@ int main()
 	bool found;
 	found = search(user_list, chosen_username);
 
-	if (found == true)
+	if (found != NULL)
 		cout << "Found";
 	else
 		cout << "Not found";
