@@ -40,14 +40,18 @@ public:
 	}
 };
 
-User* search(list<User> user_list, string username)
+User* search(list<User> *user_list, string username)
 {
 	list<User>::iterator it;
-	for (it = user_list.begin(); it != user_list.end(); it++)
+	for (it = (*user_list).begin(); it != (*user_list).end(); it++)
 	{
 		if ((*it).getUsername() == username) {
 			// Found!!
+			cout << (*it).getUsername() << endl;
+			//cout << **it << endl;
+			system("PAUSE");
 			return &(*it);
+			//return it;
 		}
 	}
 
@@ -87,10 +91,15 @@ int main()
 	cin >> chosen_username;
 
 	User* found;
-	found = search(user_list, chosen_username);
+	found = search(&user_list, chosen_username);
 
 	if (found != NULL)
-		cout << "Found";
+	{
+		cout << "Found" << endl;
+		//cout << found << endl;
+
+		cout << (*found).getPassword() << endl;
+	}
 	else
 		cout << "Not found";
 
