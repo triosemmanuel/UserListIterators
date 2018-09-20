@@ -86,7 +86,7 @@ int main()
 	cout << "Enter a username to search for: ";
 	cin >> chosen_username;
 
-	bool found;
+	User* found;
 	found = search(user_list, chosen_username);
 
 	if (found != NULL)
